@@ -1,0 +1,335 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+$main-color: #333333;
+$secondary-color: #008080;
+$border-radius: 10px;
+
+@mixin grid($val) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+  gap: 24px;
+
+  @media (min-width: 1000px) {
+    gap: 20px;
+  }
+}
+
+@mixin flex(
+  $flex-direction: row,
+  $justify-content: center,
+  $align-items: center
+) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin fontDetails($size, $weight, $line-height) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+img {
+  display: block;
+}
+
+.App {
+  @include flex(row, flex-start, stretch);
+  min-height: 100vh;
+}
+
+.wrapper {
+  flex-grow: 1;
+  background: #f3f5fc;
+  margin-left: 200px;
+
+  @media (max-width: 999px) {
+    margin-left: 0;
+  }
+
+  .header {
+    @include flex(column, flex-start, flex-start);
+    margin-bottom: 35px;
+
+    @media (min-width: 1000px) {
+      margin-bottom: 29px;
+    }
+
+    &__top {
+      @include flex(row, flex-start);
+      position: fixed;
+      min-height: 100px;
+      padding-top: 30px;
+      margin-bottom: 20px;
+      width: 100%;
+      background: #f3f5fc;
+
+      @media (min-width: 1000px) {
+        display: none;
+      }
+
+      &__menu {
+        padding-left: 20px;
+        margin-bottom: 20px;
+
+        @media (min-width: 600px) {
+          padding-left: 30px;
+        }
+
+        &__icon {
+          width: 20px;
+
+          @media (min-width: 500px) {
+            width: 30px;
+          }
+        }
+      }
+
+      &__logo {
+        position: absolute;
+        top: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+      }
+    }
+
+    &__bottom {
+      padding-inline: 20px;
+      margin-top: 100px;
+
+      @media (min-width: 600px) {
+        padding-left: 30px;
+      }
+
+      @media (min-width: 1000px) {
+        margin-top: 50px;
+        padding-inline: 30px;
+      }
+
+      &__header {
+        @include fontDetails(18px, 600, 27px);
+        color: $main-color;
+        margin-bottom: 10px;
+
+        @media (min-width: 600px) {
+          @include fontDetails(24px, 600, 36px);
+        }
+      }
+
+      &__body {
+        @include fontDetails(14px, 400, 21px);
+        color: $main-color;
+
+        @media (min-width: 600px) {
+          @include fontDetails(16px, 400, 24px);
+        }
+
+        &--accent {
+          font-weight: 500;
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+
+  .main {
+    @include grid(160px);
+    padding-inline: 20px;
+    padding-bottom: 25px;
+
+    @media (min-width: 600px) {
+      @include grid(230px);
+      padding-inline: 30px;
+      padding-bottom: 55px;
+    }
+
+    &__service {
+      @include flex(column, flex-start);
+      border-radius: $border-radius;
+      text-align: center;
+      gap: 10px;
+      padding-top: 25px;
+      background: #ffffff;
+      min-height: 233px;
+      max-width: 320px;
+
+      @media (max-width: 999px) {
+        max-width: 500px;
+      }
+
+      @media (min-width: 600px) {
+        min-height: 400px;
+        padding-top: 57px;
+        gap: 20px;
+      }
+
+      &__img {
+        height: 100px;
+
+        @media (min-width: 600px) {
+          height: 150px;
+        }
+      }
+
+      &__title {
+        @include fontDetails(15px, 500, 22px);
+        color: $secondary-color;
+
+        @media (min-width: 600px) {
+          @include fontDetails(18px, 500, 27px);
+        }
+      }
+
+      &__body {
+        @include fontDetails(13px, 400, 20px);
+        color: $main-color;
+        margin-bottom: 10px;
+        padding-inline: 15px;
+
+        @media (min-width: 600px) {
+          @include fontDetails(16px, 400, 24px);
+          padding-inline: 25px;
+        }
+      }
+    }
+  }
+}
+
+.aside {
+  &--hide {
+    @include flex(column, flex-start, flex-start);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding-top: 7vh;
+    width: 202px;
+
+    .aside__logo {
+      max-width: 67.3%;
+      margin-inline: auto;
+      margin-bottom: 53px;
+    }
+
+    .aside__nav {
+      width: 100%;
+
+      &__list {
+        padding-inline: 10.89% 8.91%;
+
+        &__item {
+          @include flex(row, flex-start);
+          gap: 10px;
+          padding: 17px 0 17px 19px;
+          border-radius: $border-radius;
+
+          &:hover {
+            background: #d7ecec;
+          }
+
+          &:nth-child(4) {
+            background: #d7ecec;
+          }
+
+          &__icon {
+            width: 22px;
+          }
+
+          &__text {
+            @include fontDetails(16px, 400, 24px);
+            color: #489494;
+          }
+        }
+      }
+    }
+
+    .aside__logout {
+      @include flex(row, flex-start);
+      margin-left: 19.3%;
+      margin-block: auto 50px;
+
+      &__image {
+        height: 22px;
+      }
+    }
+
+    @media (max-width: 999px) {
+      display: none;
+    }
+  }
+
+  &--view {
+    @include flex(column, space-between);
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    background: #fff;
+    min-width: 202px;
+    padding-block: 20% 10%;
+
+    @media (max-width: 600px) {
+      padding-top: 30%;
+    }
+
+    @media (max-width: 400px) {
+      padding-top: 40%;
+    }
+
+    .aside__logo {
+      display: none;
+    }
+
+    .aside__nav {
+      width: 100%;
+
+      &__list {
+        padding-inline: 10.89% 8.91%;
+
+        &__item {
+          @include flex(row, flex-start);
+          gap: 10px;
+          padding: 17px 0 17px 19px;
+          border-radius: $border-radius;
+
+          &:nth-child(4) {
+            background: #d7ecec;
+          }
+
+          &__icon {
+            width: 22px;
+          }
+
+          &__text {
+            @include fontDetails(16px, 400, 24px);
+            color: #489494;
+          }
+        }
+      }
+    }
+
+    .aside__logout {
+      &__image {
+        height: 22px;
+      }
+    }
+  }
+}
