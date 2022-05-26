@@ -307,6 +307,7 @@ img {
           gap: 10px;
           padding-left: 19px;
           border-radius: $border-radius;
+          cursor: pointer;
 
           @media (max-width: 1120px) {
             padding-inline: 12px;
@@ -341,6 +342,7 @@ img {
 
       &__image {
         height: 22px;
+        cursor: pointer;
 
         @media (max-width: 1300px) {
           height: 20px;
@@ -402,6 +404,7 @@ img {
             gap: 10px;
             padding-left: 19px;
             border-radius: $border-radius;
+            cursor: pointer;
 
             @media (max-width: 1120px) {
               padding-inline: 12px;
@@ -435,6 +438,7 @@ img {
 
           &__image {
             height: 22px;
+            cursor: pointer;
 
             @media (max-width: 1300px) {
               height: 20px;
@@ -454,6 +458,7 @@ img {
 
         &__image {
           height: 22px;
+          cursor: pointer;
 
           @media (max-width: 1300px) {
             height: 20px;
@@ -514,8 +519,9 @@ img {
           &__item {
             @include flex(row, flex-start);
             gap: 10px;
-            padding: 17px 0 17px 19px;
+            padding-left: 19px;
             border-radius: $border-radius;
+            cursor: pointer;
 
             &:nth-child(4) {
               background: #d7ecec;
@@ -527,6 +533,8 @@ img {
 
             &__text {
               @include fontDetails(16px, 400, 24px);
+              padding-block: 1.075em;
+              font-size: clamp(12px, 1.1vw, 16px);
               color: #489494;
             }
           }
@@ -535,6 +543,7 @@ img {
 
       .aside__logout {
         &__image {
+          cursor: pointer;
           height: 22px;
         }
       }
@@ -590,6 +599,7 @@ img {
             gap: 10px;
             padding-left: 19px;
             border-radius: $border-radius;
+            cursor: pointer;
 
             @media (max-width: 1120px) {
               padding-inline: 12px;
@@ -624,6 +634,7 @@ img {
 
         &__image {
           height: 22px;
+          cursor: pointer;
 
           @media (max-width: 1300px) {
             height: 20px;
@@ -642,6 +653,7 @@ img {
 
         &__image {
           height: 22px;
+          cursor: pointer;
 
           @media (max-width: 1300px) {
             height: 20px;
@@ -702,8 +714,9 @@ img {
           &__item {
             @include flex(row, flex-start);
             gap: 10px;
-            padding: 17px 0 17px 19px;
+            padding-left: 19px;
             border-radius: $border-radius;
+            cursor: pointer;
 
             &:nth-child(4) {
               background: #d7ecec;
@@ -715,6 +728,8 @@ img {
 
             &__text {
               @include fontDetails(16px, 400, 24px);
+              padding-block: 1.075em;
+              font-size: clamp(12px, 1.1vw, 16px);
               color: #489494;
             }
           }
@@ -724,6 +739,7 @@ img {
       .aside__logout {
         &__image {
           height: 22px;
+          cursor: pointer;
         }
       }
     }
