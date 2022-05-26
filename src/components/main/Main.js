@@ -68,7 +68,7 @@ export const Main = ( { navOpen, setNavOpen }) => {
         </div>
 
         <div className="header__bottom">
-          <h1 className="header__bottom__header">Loan</h1>
+          <h1 className="header__bottom__header">Loans</h1>
           <h3 className="header__bottom__body">
             <span className="header__bottom__body--accent">Monday</span>, 21st
             February, 2021
