@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../../images/cloudbank 1.svg";
 import dashboard from "../../images/dashboard.svg";
 import send from "../../images/send.svg";
@@ -10,7 +10,18 @@ import market from "../../images/3885905 1.svg";
 import settings from "../../images/settings line (1).svg";
 import logout from "../../images/Logout.svg";
 
-export const Nav = ({ navOpen }) => {
+export const Nav = ({ setNavOpen, navOpen, hamburgerClicked }) => {
+  let [asideClass, setAsideClass] = useState("aside");
+
+  useEffect(() => {
+    if (hamburgerClicked) {
+      if (navOpen) setAsideClass("aside--view");
+      else setAsideClass("aside--hide");
+    } else {
+      setAsideClass("aside");
+    }
+  }, [hamburgerClicked, navOpen]);
+
   let navs = [
     {
       img: dashboard,
@@ -45,14 +56,18 @@ export const Nav = ({ navOpen }) => {
       text: "Settings",
     },
   ];
+
   return (
-    <aside className={navOpen ? "aside--view" : "aside--hide"}>
+    <aside className={asideClass}>
       <img className="aside__logo" src={logo} alt="logo" />
 
       <nav className="aside__nav">
         <ul className="aside__nav__list">
           {navs.map((nav) => (
-            <li className="aside__nav__list__item">
+            <li
+              className="aside__nav__list__item"
+              onClick={() => setNavOpen(false)}
+            >
               <img
                 className="aside__nav__list__item__icon"
                 src={nav.img}

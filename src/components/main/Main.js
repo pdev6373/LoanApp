@@ -1,3 +1,4 @@
+import x from "../../images/x.svg";
 import menu from "../../images/menu.svg";
 import logo from "../../images/image 3.svg";
 import oneMonth from "../../images/One Month.svg";
@@ -9,7 +10,7 @@ import pawn from "../../images/Pawn.svg";
 import working from "../../images/Working Capital Overdraft.svg";
 import tt from "../../images/T&T.svg";
 
-export const Main = ( { navOpen, setNavOpen }) => {
+export const Main = ({ navOpen, setNavOpen, setHamburgerClicked }) => {
   let services = [
     {
       img: oneMonth,
@@ -54,15 +55,20 @@ export const Main = ( { navOpen, setNavOpen }) => {
   ];
 
   const handleClick = () => {
-    setNavOpen(!navOpen)
-  }
+    setHamburgerClicked(true);
+    setNavOpen(!navOpen);
+  };
 
   return (
     <section className="wrapper">
       <header className="header">
         <div className="header__top">
           <span onClick={handleClick} className="header__top__menu" href="/">
-            <img className="header__top__menu__icon" src={menu} alt="menu" />
+            {navOpen ? (
+              <img className="header__top__menu__icon" src={x} alt="close" />
+            ) : (
+              <img className="header__top__menu__icon" src={menu} alt="menu" />
+            )}
           </span>
           <img className="header__top__logo" src={logo} alt="logo" />
         </div>
