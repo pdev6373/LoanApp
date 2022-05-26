@@ -363,6 +363,13 @@ img {
         border-radius: 100vw;
       }
 
+      @supports (scrollbar-color: #00808032 #f3f5fc) {
+        & {
+          scrollbar-color: #00808032 #f3f5fc;
+          scrollbar-width: thin;
+        }
+      }
+
       @include flex(column, flex-start, flex-start);
       position: fixed;
       top: 0;
@@ -523,6 +530,13 @@ img {
       &::-webkit-scrollbar-thumb {
         background: #00808032;
         border-radius: 100vw;
+      }
+
+      @supports (scrollbar-color: #00808032 #f3f5fc) {
+        & {
+          scrollbar-color: #00808032 #f3f5fc;
+          scrollbar-width: thin;
+        }
       }
 
       @include flex(column, flex-start, flex-start);
