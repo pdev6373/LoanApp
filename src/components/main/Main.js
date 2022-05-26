@@ -84,7 +84,7 @@ export const Main = ({ navOpen, setNavOpen, setHamburgerClicked }) => {
 
       <main className="main">
         {services.map((service) => (
-          <div className="main__service">
+          <div key={service.title} className="main__service">
             <img
               className="main__service__img"
               src={service.img}

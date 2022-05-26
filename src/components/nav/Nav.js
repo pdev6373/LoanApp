@@ -62,7 +62,11 @@ export const Nav = ({ setNavOpen, navOpen, hamburgerClicked }) => {
 
   useEffect(() => {
     if (width >= 1000) setAsideClass("aside");
-  }, [width]);
+    else {
+      if (navOpen) setAsideClass("aside--view");
+      else setAsideClass("aside--hide");
+    }
+  }, [width, navOpen]);
 
   return (
     <aside className={asideClass}>
@@ -72,6 +76,7 @@ export const Nav = ({ setNavOpen, navOpen, hamburgerClicked }) => {
         <ul className="aside__nav__list">
           {navs.map((nav) => (
             <li
+              key={nav.text}
               className="aside__nav__list__item"
               onClick={() => setNavOpen(false)}
             >

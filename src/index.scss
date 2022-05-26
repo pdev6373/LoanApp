@@ -281,14 +281,14 @@ img {
     top: 0;
     left: 0;
     bottom: 0;
-    padding-top: 50px;
+    padding-top: 5.39vh;
     width: 14%;
     overflow-y: scroll;
 
     .aside__logo {
       width: 67%;
       margin-inline: auto;
-      margin-bottom: 50px;
+      margin-bottom: 5.6vh;
     }
 
     .aside__nav {
@@ -305,7 +305,7 @@ img {
         &__item {
           @include flex(row, flex-start);
           gap: 10px;
-          padding: 17px 0 17px 19px;
+          padding-left: 19px;
           border-radius: $border-radius;
 
           @media (max-width: 1120px) {
@@ -326,6 +326,7 @@ img {
 
           &__text {
             @include fontDetails(16px, 400, 24px);
+            padding-block: 1.075em;
             font-size: clamp(12px, 1.1vw, 16px);
             color: #489494;
           }
@@ -375,14 +376,14 @@ img {
       top: 0;
       left: 0;
       bottom: 0;
-      padding-top: 50px;
+      padding-top: 5.39vh;
       width: 14%;
       overflow-y: scroll;
 
       .aside__logo {
         width: 67%;
         margin-inline: auto;
-        margin-bottom: 50px;
+        margin-bottom: 5.6vh;
       }
 
       .aside__nav {
@@ -399,7 +400,7 @@ img {
           &__item {
             @include flex(row, flex-start);
             gap: 10px;
-            padding: 17px 0 17px 19px;
+            padding-left: 19px;
             border-radius: $border-radius;
 
             @media (max-width: 1120px) {
@@ -420,8 +421,27 @@ img {
 
             &__text {
               @include fontDetails(16px, 400, 24px);
+              padding-block: 1.075em;
               font-size: clamp(12px, 1.1vw, 16px);
               color: #489494;
+            }
+          }
+        }
+
+        .aside__logout {
+          @include flex(row, flex-start);
+          margin-left: 19.3%;
+          margin-block: auto 50px;
+
+          &__image {
+            height: 22px;
+
+            @media (max-width: 1300px) {
+              height: 20px;
+            }
+
+            @media (max-width: 1200px) {
+              height: 19px;
             }
           }
         }
@@ -544,14 +564,14 @@ img {
       top: 0;
       left: 0;
       bottom: 0;
-      padding-top: 50px;
+      padding-top: 5.39vh;
       width: 14%;
       overflow-y: scroll;
 
       .aside__logo {
         width: 67%;
         margin-inline: auto;
-        margin-bottom: 50px;
+        margin-bottom: 5.6vh;
       }
 
       .aside__nav {
@@ -568,7 +588,7 @@ img {
           &__item {
             @include flex(row, flex-start);
             gap: 10px;
-            padding: 17px 0 17px 19px;
+            padding-left: 19px;
             border-radius: $border-radius;
 
             @media (max-width: 1120px) {
@@ -589,9 +609,28 @@ img {
 
             &__text {
               @include fontDetails(16px, 400, 24px);
+              padding-block: 1.075em;
               font-size: clamp(12px, 1.1vw, 16px);
               color: #489494;
             }
+          }
+        }
+      }
+
+      .aside__logout {
+        @include flex(row, flex-start);
+        margin-left: 19.3%;
+        margin-block: auto 50px;
+
+        &__image {
+          height: 22px;
+
+          @media (max-width: 1300px) {
+            height: 20px;
+          }
+
+          @media (max-width: 1200px) {
+            height: 19px;
           }
         }
       }
