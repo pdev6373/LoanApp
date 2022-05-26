@@ -12,18 +12,29 @@ import market from "../../images/3885905 1.svg";
 import settings from "../../images/settings line (1).svg";
 import logout from "../../images/Logout.svg";
 
-export const Nav = ({ setNavOpen, navOpen, hamburgerClicked }) => {
+export const Nav = ({
+  setNavOpen,
+  navOpen,
+  hamburgerClicked,
+  setHamburgerClicked,
+}) => {
   let [asideClass, setAsideClass] = useState("aside");
   let { width } = useWindowDimension();
 
   useEffect(() => {
-    if (hamburgerClicked) {
-      if (navOpen) setAsideClass("aside--view");
-      else setAsideClass("aside--hide");
-    } else {
+    if (width >= 1000) {
       setAsideClass("aside");
+      setHamburgerClicked(false);
+    } else {
+      if (hamburgerClicked) {
+        if (navOpen) setAsideClass("aside--view");
+        else setAsideClass("aside--hide");
+      } else {
+        if (navOpen) setAsideClass("aside--view");
+        else setAsideClass("aside");
+      }
     }
-  }, [hamburgerClicked, navOpen]);
+  }, [width, hamburgerClicked, navOpen, setHamburgerClicked]);
 
   let navs = [
     {
@@ -59,14 +70,6 @@ export const Nav = ({ setNavOpen, navOpen, hamburgerClicked }) => {
       text: "Settings",
     },
   ];
-
-  useEffect(() => {
-    if (width >= 1000) setAsideClass("aside");
-    else {
-      if (navOpen) setAsideClass("aside--view");
-      else setAsideClass("aside--hide");
-    }
-  }, [width, navOpen]);
 
   return (
     <aside className={asideClass}>

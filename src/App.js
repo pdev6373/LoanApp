@@ -10,8 +10,9 @@ function App() {
     <div className="App">
       <Nav
         setNavOpen={setNavOpen}
-         navOpen={navOpen}
+        navOpen={navOpen}
         hamburgerClicked={hamburgerClicked}
+        setHamburgerClicked={setHamburgerClicked}
       />
       <Main
         navOpen={navOpen}
