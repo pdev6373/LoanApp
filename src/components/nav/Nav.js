@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import useWindowDimension from "../../hooks/useWindowDimensions";
+
 import logo from "../../images/cloudbank 1.svg";
 import dashboard from "../../images/dashboard.svg";
 import send from "../../images/send.svg";
@@ -12,6 +14,7 @@ import logout from "../../images/Logout.svg";
 
 export const Nav = ({ setNavOpen, navOpen, hamburgerClicked }) => {
   let [asideClass, setAsideClass] = useState("aside");
+  let { width } = useWindowDimension();
 
   useEffect(() => {
     if (hamburgerClicked) {
@@ -56,6 +59,10 @@ export const Nav = ({ setNavOpen, navOpen, hamburgerClicked }) => {
       text: "Settings",
     },
   ];
+
+  useEffect(() => {
+    if (width >= 1000) setAsideClass("aside");
+  }, [width]);
 
   return (
     <aside className={asideClass}>
